@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOCUS-B | Gomitas Energéticas de Guayusa</title>
+    <style>
+        :root {
+            --verde-selva: #2ec4b6;
+            --morado-colibri: #7209b7;
+            --fucsia-brillante: #f72585;
+            --azul-electrico: #3a0ca3;
+            --blanco: #ffffff;
+            --gris-oscuro: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: var(--gris-oscuro);
+            line-height: 1.6;
+        }
+
+        /* Encabezado con degradado del colibrí */
+        header {
+            background: linear-gradient(135deg, var(--azul-electrico), var(--morado-colibri), var(--fucsia-brillante));
+            color: var(--blanco);
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Contenedor Principal */
+        .container {
+            max-width: 1000px;
+            margin: -2rem auto 3rem auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Tarjeta de Producto */
+        .product-card {
+            background: var(--blanco);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media (max-width: 768px) {
+            .product-card { grid-template-columns: 1fr; }
+        }
+
+        .product-image {
+            background: linear-gradient(45deg, #e2fef1, #f4e8ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            min-height: 300px;
+        }
+
+        .product-info {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .brand-tag {
+            background-color: #e8fff5;
+            color: #10b981;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            display: inline-block;
+            align-self: flex-start;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+            border: 1px solid #bbf7d0;
+        }
+
+        .product-info h2 {
+            font-size: 2rem;
+            color: var(--morado-colibri);
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gris-oscuro);
+            margin: 1rem 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #666;
+        }
+
+        /* Características */
+        .features {
+            margin: 2rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .feature-item .icon {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        /* Botón de Compra */
+        .btn-buy {
+            background: linear-gradient(90deg, #10b981, var(--morado-colibri));
+            color: var(--blanco);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(114, 9, 183, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-buy:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(114, 9, 183, 0.4);
+        }
+
+        /* Sección Científica / Origen */
+        .details-section {
+            background: var(--blanco);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .details-section h3 {
+            color: var(--azul-electrico);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 3px solid #f4e8ff;
+            padding-bottom: 0.5rem;
+        }
+
+        .grid-components {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .component-card {
+            background: #fafafa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--fucsia-brillante);
+        }
+
+        .component-card h4 {
+            color: var(--morado-colibri);
+            margin-bottom: 0.3rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>FOCUS-B</h1>
+        <p>Gomitas Energéticas de Guayusa Amazónica 🇪🇨</p>
+    </header>
+
+    <div class="container">
+        <div class="product-card">
+            <!-- Espacio para imagen del producto (puedes cambiar el emoji por una foto luego) -->
+            <div class="product-image">
+                🔋🍬
+            </div>
+            
+            <div class="product-info">
+                <span class="brand-tag">100% Orgánico</span>
+                <h2>Energía Natural del Amazonas</h2>
+                <p>Descubre el poder de la guayusa ecuatoriana concentrado en deliciosas gomitas diseñadas para potenciar tu día a día sin efectos secundarios.</p>
+                
+                <div class="price">$2.50 <span>/ Paquete</span></div>
+
+                <div class="features">
+                    <div class="feature-item"><span class="icon">✓</span> ENERGÍA NATURAL</div>
+                    <div class="feature-item"><span class="icon">✓</span> Claridad mental</div>
+                    <div class="feature-item"><span class="icon">✓</span> Concentración</div>
+                    <div class="feature-item"><span class="icon">✓</span> Antioxidantes</div>
+                </div>
+
+                <a href="https://wa.me" target="_blank" class="btn-buy">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="details-section">
+            <h3>¿Por qué elegir FOCUS-B?</h3>
+            <p>La guayusa es una planta ancestral de la Amazonía ecuatoriana. A diferencia del café o las bebidas energizantes artificiales, te brinda una liberación de energía sostenida y limpia gracias a su combinación única de compuestos naturales:</p>
+            
+            <div class="grid-components">
+                <div class="component-card">
+                    <h4>L-teanina</h4>
+                    <p>Reduce el estrés y mejora el enfoque mental sin causar somnolencia.</p>
+                </div>
+                <div class="component-card">
+                    <h4>Teobromina</h4>
+                    <p>Mejora el estado de ánimo y estimula el cuerpo de forma prolongada.</p>
+                </div>
+                <div class="component-card">
+                    <h4>Caféina Natural</h4>
+                    <p>Aporta energía limpia y constante, evitando los bajones repentinos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 FOCUS-B - Hecho en Ecuador con orgullo amazónico.</p>
+    </footer>
+
+</body>
+</html>
